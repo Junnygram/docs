@@ -1,0 +1,134 @@
+---
+title: 'Authentication'
+description: 'Learn how to authenticate on TMDB'
+icon: "shield"
+iconType: "solid"
+---
+
+TMDB API uses Application level authentication. You can either authenticate with an **api_key** or by using your **access token** as a Bearer token.
+To learn how to obtain these credentials, please visit the **Authentication** page for details.
+<Info>
+    Using the bearer token has an added benefit of being a single authentication process that you can
+    use across both the v3 and v4 methods.
+</Info>
+
+
+## Authenticate with Bearer token
+To authenticate with your bearer token, you'll have to obtain the **API Read Access Token**
+ from your dashboard (see **obtain api key**), then send it along as an Authorization header - See cURL example below.
+
+```
+curl --request GET \
+     --url 'https://api.themoviedb.org/3/movie/11' \
+     --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDExYjEzMDZlZjc4YWM4NTliZGI1YzZlZWFkNTIyOSIsIm5iZiI6MTczMzc1MzU2OS4yMTcsInN1YiI6IjY3NTZmYWUxOGIyY2MyNzg4YjExZGUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.x5-zdG_Pxfdpidu80KgSm0i3kMFVl2vSnIR2I3NiR8M'
+```
+
+## session_id, guest_session_id, and account_id, 
+There are other credentials necessary to access some endpoints on TMDB. 
+This section explains in details, how to get each of these credential.
+
+### session_id (User authentication)
+The endpoints in **Authentication** section of this docs allows you to authenticate users so they can do things like, rate movies, 
+add to favourite, as well as create and edit custom list in your application 
+while staying in sync with their TMDB account.
+
+This is controlled with a session_id parameter. 
+**Follow the steps below to generate a session_id:**
+#### 1. Create a new request token
+The **create-request-token** endpoint allows you to request a new token. 
+This is a temporary token, required to ask the user for permission to access their account 
+and will expire automatically after 60 minutes, if not used.
+<img
+    className="block dark:hidden"
+    src="/images/request-token.png"
+    alt="account_id"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/request-token.png"
+    alt="account_id"
+    />
+    *example request token*
+#### 2. Ask the user for permission
+Using the request token from the previous request, replace with **REQUEST TOKEN** 
+in the url below and forward to your user.
+```Example
+https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}
+```
+This will enable the TMDB user to approve your request from their end.
+<img
+    className="block dark:hidden"
+    src="/images/user-auth.png"
+    alt="account_id"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/user-auth.png"
+    alt="account_id"
+    />
+You can also add a redirect parameter to the url if you have a page you want the user to arrive at, after authenticating.
+
+#### 3. Create session_id
+Once the request token has been approved by the user, use the create-session endpoint, 
+with the approved request token as body parameter, to request for a session_id.
+
+<img
+    className="block dark:hidden"
+    src="/images/session-id.png"
+    alt="account_id"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/session-id.png"
+    alt="account_id"
+    />
+
+<Info>
+    You will need the session_id as a parameter for subsequent requests. 
+    So you should treat it like a password and keep it safe.
+</Info>
+
+### guest_session_id
+Guest sessions are special kind of session that gives users the functionality of an account 
+like, rate a movie etc. without having a registered account on TMDB.
+
+To create a Guest session, use the create-guest-session endpoint. If the request is successful,
+you will recieve a guest session_id like so:
+<img
+    className="block dark:hidden"
+    src="/images/guest-session.png"
+    alt="account_id"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/guest-session.png"
+    alt="account_id"
+    />
+<Info>
+   Guest sessions will automatically be deleted if they are not used withn 60 minutes of being issued.
+</Info>
+
+
+### account_id
+This is a unique Id for a user's account and a required parameter for all accounts endpoints. 
+It allow users to add or remove personalized informaton from a users account, and is 
+automatically generated once a user logs in to their TMDB account.
+#### To find your account_id, you can either use the endpoint:
+```
+BaseUrl/account?api_key=YOUR_API_KEY&session_id=YOUR_SESSION_ID
+```
+
+or 
+
+- Login to your tmdb account on the API reference docs 
+- Check the account_id path parameter for any accounts endpoint.
+<img
+    className="block dark:hidden"
+    src="/images/account-id.png"
+    alt="account_id"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/account-id.png"
+    alt="account_id"
+    />

@@ -1,7 +1,20 @@
-.api-key{
-    background-color: #01b4e4;
-    width: 400px;
-    height: 40px;
-    border-radius: 15px;
-    margin: 0 0 0 10px;
+.intro-content {
+    text-align: center;
+    margin: 2em;
+}
+
+.intro-content h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.intro-content p {
+    margin-top: 0.5em;
+    font-size: 28px;
+    color: #12B6DC;
+    font-weight: 500;
+}
+
+.intro-cards {
+    margin: 0 2em;
 }

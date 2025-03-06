@@ -1,0 +1,189 @@
+---
+title: 'Endpoints overview'
+description: 'Below is an overview of all endpoints currently available on TMDB'
+icon: "crosshairs"
+iconType: "solid"
+---
+
+## Base url
+```
+https://api.themoviedb.org/3
+```
+
+## Authentication
+
+<CardGroup cols={1}>
+  <Card
+    title="/authentication/guest_session/new"
+    icon="square-1"
+    href="https://devliz.mintlify.app/api-reference/endpoint/authentication/create-guest-session"
+  >
+    This endpoint allows you to create a new session for a guest user.
+  </Card>
+  <Card
+    title="/authentication/token/new"
+    icon="square-2"
+    href="https://devliz.mintlify.app/api-reference/endpoint/authentication/create-request-token"
+  >
+   This endpoint allows you to create a temporary request token that can be used to validate 
+   a TMDB user login.
+  </Card>
+  <Card
+    title="/authentication/session/new"
+    icon="square-3"
+    href="https://devliz.mintlify.app/api-reference/endpoint/authentication/create-session-id"
+  >
+   This endpoint allows you to create a fully valid session ID once a user has validated the 
+   request token.
+  </Card>
+  <Card
+    title="/authentication"
+    icon="square-4"
+    href="https://devliz.mintlify.app/api-reference/endpoint/authentication/validate-api-key"
+  >
+   This endpoint allows you to test if your API key is valid.
+  </Card>
+</CardGroup>
+
+## Account
+
+<CardGroup cols={1}>
+  <Card
+    title="/account/{account_id}/favorite"
+    icon="square-1"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/add-favourite"
+  >
+    This endpoint allows you to mark a movie or TV show as a favourite.
+  </Card>
+  <Card
+    title="/account/{account_id}/watchlist"
+    icon="square-2"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/add-to-watchlist"
+  >
+   This endpoint allows you to add a movie or TV show to your watchlist.
+  </Card>
+  <Card
+    title="/account/{account_id}"
+    icon="square-3"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/fetch-account-details"
+  >
+  This endpoint allows you to get the public details of an account on TMDB.
+  </Card>
+  <Card
+    title="/account/{account_id}/lists"
+    icon="square-4"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-custom-playlist"
+  >
+   This endpoint allows you to get a user’s list of custom playlists.
+  </Card>
+  <Card
+    title="/account/{account_id}/favorite/movies"
+    icon="square-5"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-favourite-movies"
+  >
+   This endpoint allows you to get a user’s list of favourite movies.
+  </Card>
+  <Card
+    title="/account/{account_id}/favorite/tv"
+    icon="square-6"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-favourite-tv-shows"
+  >
+   This endpoint allows you to get a user’s list of favourite TV shows.
+  </Card>
+  <Card
+    title="/account/{account_id}/rated/movies"
+    icon="square-7"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-rated-movies"
+  >
+   This endpoint allows you to get a user’s list of rated movies.
+  </Card>
+  <Card
+    title="/account/{{account_id}}/rated/tv/episodes"
+    icon="square-8"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-rated-tv-episodes"
+  >
+   This endpoint allows you to get a user’s list of rated TV episodes.
+  </Card>
+  <Card
+    title="/account/{account_id}/rated/tv"
+    icon="square-9"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-rated-tv-shows"
+  >
+   This endpoint allows you to get a user’s list of rated TV shows.
+  </Card>
+  <Card
+    title="/account/{account_id}/watchlist/movies"
+    icon="square-10"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-watchlisted-movies"
+  >
+   This endpoint allows you to get a list of movies added to a user’s watchlist.
+  </Card>
+  <Card
+    title="/account/{account_id}/watchlist/tv"
+    icon="square-eleven"
+    href="https://devliz.mintlify.app/api-reference/endpoint/account/list-watchlisted-tv-shows"
+  >
+  This endpoint allows you to get a list of TV shows added to a user’s watchlist.
+  </Card>
+</CardGroup>
+
+## Certifications
+<CardGroup cols={1}>
+  <Card
+    title="/certification/movie/list"
+    icon="square-1"
+    href="https://devliz.mintlify.app/api-reference/endpoint/certifications/list-movie-certifications"
+  >
+    This endpoint allows you to get an up-to-date list of the officially supported movie certifications on TMDB.
+  </Card>
+   <Card
+    title="/certification/tv/list"
+    icon="square-2"
+    href="https://devliz.mintlify.app/api-reference/endpoint/certifications/list-movie-certifications"
+  >
+   This endpoint allows you to get an up-to-date list of the officially supported TV show certifications on TMDB.
+  </Card>
+  </CardGroup>
+
+  ## Changes
+<CardGroup cols={1}>
+  <Card
+    title="/person/changes"
+    icon="square-1"
+    href="https://devliz.mintlify.app/api-reference/endpoint/changes/list-changed-persons"
+  >
+    This endpoint allows you to get an up-to-date list of the officially supported movie certifications on TMDB.
+  </Card>
+   <Card
+    title="/tv/changes"
+    icon="square-2"
+    href="https://devliz.mintlify.app/api-reference/endpoint/changes/list-changed-tv-shows"
+  >
+   This endpoint allows you to get an up-to-date list of the officially supported TV show certifications on TMDB.
+  </Card>
+  </CardGroup>
+
+## Collections
+<CardGroup cols={1}>
+  <Card
+    title="/collection/{collection_id}"
+    icon="square-1"
+    href="https://devliz.mintlify.app/api-reference/endpoint/collections/fetch-collection-details"
+  >
+    This endpoint allows you to fetch a collection by ID
+  </Card>
+   <Card
+    title="/collection/{collection_id}/images"
+    icon="square-2"
+    href="https://devliz.mintlify.app/api-reference/endpoint/collections/fetch-collection-images"
+  >
+   This endpoint allows you to fetch images that belong to a collection.
+  </Card>
+  <Card
+    title="/collection/{collection_id}/translations"
+    icon="square-3"
+    href="https://devliz.mintlify.app/api-reference/endpoint/collections/fetch-collection-translations"
+  >
+   This endpoint allows you to fetch translations in a collection.
+  </Card>
+  </CardGroup>

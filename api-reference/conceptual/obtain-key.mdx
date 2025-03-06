@@ -1,0 +1,51 @@
+---
+title: 'Obtain API key'
+description: 'Learn how to get the right credential for your authentication'
+icon: "key"
+iconType: "solid"
+---
+
+To access TMDB API, you'll need to authenticate with either an API key or an access token (which can be used as a bearer token).
+Follow the steps below to obtain these credentials.
+
+1. [Login](https://www.themoviedb.org/login) to your TMDB account (or create a new account if you don't have one).
+   You'll be redirected to your TMDB dashboard.
+   <img
+    className="block dark:hidden"
+    src="/images/tmdb-dashboard.png"
+    alt="tmbd dashboard"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/tmdb-dashboard.png"
+    alt="tmbd dashboard"
+    />
+
+2.  On the top-right corner of your dashboard, click on the account icon. From the dropdown-menu, select **settings**.
+    <img
+    className="block dark:hidden"
+    src="/images/tmdb-settings.png"
+    alt="account settings"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/tmdb-settings.png"
+    alt="account settings"
+    />
+
+3.  On the **settings** menu, selet **API**. Scroll to the bottom to find the **API Read Access Token** and **API key**. You can copy any of the credentials to use for authentication.
+    <img
+    className="block dark:hidden"
+    src="/images/tmdb-credentials.png"
+    alt="API credentials"
+    />
+    <img
+    className="hidden dark:block"
+    src="/images/tmdb-credentials.png"
+    alt="API credentials"
+    />
+
+<Info>
+    Using the bearer token has an added benefit of being a single authentication process that you can
+    use across both the v3 and v4 methods.
+</Info>

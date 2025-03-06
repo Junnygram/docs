@@ -1,71 +1,73 @@
 ---
 title: Introduction
-description: "Welcome to the home of your new documentation"
+description: 'Welcome to the home of your new documentation'
+mode: "custom"
 ---
+
+import Styles from '/style.css';
+
 
 <img
   className="block dark:hidden"
-  src="/images/hero-light.png"
+  src="/images/TMDB-Coverr.png"
   alt="Hero Light"
+  width="100%"
 />
 <img
   className="hidden dark:block"
-  src="/images/hero-dark.png"
+  src="/images/TMDB-Coverr.png"
   alt="Hero Dark"
 />
 
-## Setting up
+<div className="intro-content">
+  <h1>Welcome to TMDB API documentation</h1>
+  <p>Select a topic to explore</p>
+</div>
 
-The first step to world-class documentation is setting up your editing environments.
 
-<CardGroup cols={2}>
+
+<CardGroup cols={3} className="p-6 intro-cards" >
   <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
+    title="Introduction"
+    icon="Book"
+    href="https://devliz.mintlify.app/api-reference/conceptual/introduction"
   >
-    Get your docs set up locally for easy development
+    Overview and use cases of TMDB API
   </Card>
   <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
+    title="Obtain API key"
+    icon="key"
+    href="https://devliz.mintlify.app/api-reference/conceptual/obtain-key"
   >
-    Preview your changes before you push to make sure they're perfect
+    Learn how to access your API key
+  </Card>
+  <Card
+    title="Authentication"
+    icon="shield"
+    href="https://devliz.mintlify.app/api-reference/conceptual/authentication"
+  >
+    Learn how to access our API reference with your key
+  </Card>
+  <Card
+    title="Endpoints Overview"
+    icon="crosshairs"
+    href="https://devliz.mintlify.app/api-reference/conceptual/endpoint-overview"
+  >
+    View all our endpoints in one place
+  </Card>
+  <Card
+    title="Errors & Rate Limits"
+    icon="triangle-exclamation"
+    href="https://devliz.mintlify.app/api-reference/conceptual/errors-ratelimits"
+  >
+   View error codes and details
+  </Card>
+  <Card
+    title="FAQs"
+    icon="block-question"
+    href="https://devliz.mintlify.app/quick-reference/faq"
+  >
+    All your questions answered in one place
   </Card>
 </CardGroup>
 
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
-
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/content/components/accordions"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
